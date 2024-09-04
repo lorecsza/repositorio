@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resgate da Princesa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fce4ec;
+            margin: 0;
+            padding: 20px;
+        }
+        .step {
+            background-color: #ffffff;
+            border: 2px solid #d81b60;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: inline-block;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+        }
+        .step h2 {
+            color: #d81b60;
+        }
+        .step button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #d81b60;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .step button:hover {
+            background-color: #880e4f;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Jornada do Príncipe para Resgatar a Princesa</h1>
+
+    <div id="step1" class="step">
+        <h2>Passo 1: Chamado à Aventura</h2>
+        <p>O príncipe recebe notícias de que a princesa foi capturada e levada para uma torre distante.</p>
+        <button onclick="nextStep('step2')">Iniciar a Jornada</button>
+    </div>
+
+    <div id="step2" class="step" style="display:none;">
+        <h2>Passo 2: Escolha do Caminho</h2>
+        <p>O príncipe precisa escolher entre um caminho através de uma floresta encantada ou através de montanhas geladas.</p>
+        <button onclick="nextStep('step3a')">Ir pela Floresta</button>
+        <button onclick="nextStep('step3b')">Ir pelas Montanhas</button>
+    </div>
+
+    <div id="step3a" class="step" style="display:none;">
+        <h2>Passo 3: Desafios na Floresta</h2>
+        <p>Na floresta, o príncipe encontra criaturas mágicas que lhe oferecem ajuda ou um atalho perigoso.</p>
+        <button onclick="nextStep('step4a')">Aceitar a Ajuda</button>
+        <button onclick="nextStep('step4b')">Tomar o Atalho</button>
+    </div>
+
+    <div id="step3b" class="step" style="display:none;">
+        <h2>Passo 3: Montanhas Geladas</h2>
+        <p>Nas montanhas, o príncipe enfrenta uma nevasca. Ele pode buscar abrigo ou seguir em frente.</p>
+        <button onclick="nextStep('step4c')">Buscar Abrigo</button>
+        <button onclick="nextStep('step4d')">Seguir em Frente</button>
+    </div>
+
+    <div id="step4a" class="step" style="display:none;">
+        <h2>Passo 4: Ajuda Mágica</h2>
+        <p>A ajuda das criaturas leva o príncipe a uma ponte mágica que o aproxima da torre.</p>
+        <button onclick="nextStep('step5a')">Atravessar a Ponte</button>
+    </div>
+
+    <div id="step4b" class="step" style="display:none;">
+        <h2>Passo 4: Atalho Perigoso</h2>
+        <p>O atalho perigoso coloca o príncipe em uma armadilha. Ele pode tentar escapar ou procurar outro caminho.</p>
+        <button onclick="nextStep('step5b')">Tentar Escapar</button>
+        <button onclick="nextStep('step5c')">Procurar Outro Caminho</button>
+    </div>
+
+    <div id="step4c" class="step" style="display:none;">
+        <h2>Passo 4: Abrigo nas Montanhas</h2>
+        <p>O príncipe encontra abrigo e descobre um mapa que mostra um caminho secreto até a torre.</p>
+        <button onclick="nextStep('step5d')">Seguir o Caminho Secreto</button>
+    </div>
+
+    <div id="step4d" class="step" style="display:none;">
+        <h2>Passo 4: Continuar na Nevasca</h2>
+        <p>O príncipe segue em frente e encontra um grupo de guerreiros que oferecem proteção ou um atalho perigoso.</p>
+        <button onclick="nextStep('step5e')">Aceitar a Proteção</button>
+        <button onclick="nextStep('step5f')">Tomar o Atalho</button>
+    </div>
+
+    <div id="step5a" class="step" style="display:none;">
+        <h2>Passo 5: Ponte Mágica</h2>
+        <p>Atravessando a ponte, o príncipe chega à base da torre onde a princesa está presa.</p>
+        <button onclick="nextStep('step6a')">Entrar na Torre</button>
+    </div>
+
+    <div id="step5b" class="step" style="display:none;">
+        <h2>Passo 5: Escapar da Armadilha</h2>
+        <p>O príncipe escapa da armadilha e encontra um caminho alternativo para a torre.</p>
+        <button onclick="nextStep('step6b')">Seguir pelo Caminho Alternativo</button>
+    </div>
+
+    <div id="step5c" class="step" style="display:none;">
+        <h2>Passo 5: Procurar Outro Caminho</h2>
+        <p>O príncipe encontra um túnel escondido que leva diretamente à torre.</p>
+        <button onclick="nextStep('step6c')">Seguir pelo Túnel</button>
+    </div>
+
+    <div id="step5d" class="step" style="display:none;">
+        <h2>Passo 5: Caminho Secreto</h2>
+        <p>O caminho secreto leva o príncipe a uma entrada oculta na torre.</p>
+        <button onclick="nextStep('step6d')">Entrar pela Entrada Oculta</button>
+    </div>
+
+    <div id="step5e" class="step" style="display:none;">
+        <h2>Passo 5: Proteção dos Guerreiros</h2>
+        <p>Com a ajuda dos guerreiros, o príncipe chega em segurança à torre.</p>
+        <button onclick="nextStep('step6e')">Avançar para a Torre</button>
+    </div>
+
+    <div id="step5f" class="step" style="display:none;">
+        <h2>Passo 5: Atalho Perigoso</h2>
+        <p>O atalho perigoso leva o príncipe diretamente à sala onde a princesa está presa.</p>
+        <button onclick="nextStep('step6f')">Resgatar a Princesa</button>
+    </div>
+
+    <div id="step6a" class="step" style="display:none;">
+        <h2>Passo 6: Entrada na Torre</h2>
+        <p>O príncipe entra na torre e enfrenta o guardião que protege a princesa.</p>
+        <button onclick="nextStep('step7')">Derrotar o Guardião</button>
+    </div>
+
+    <div id="step6b" class="step" style="display:none;">
+        <h2>Passo 6: Caminho Alternativo</h2>
+        <p>Seguindo o caminho alternativo, o príncipe encontra uma sala secreta com uma chave para libertar a princesa.</p>
+        <button onclick="nextStep('step7')">Usar a Chave</button>
+    </div>
+
+    <div id="step6c" class="step" style="display:none;">
+        <h2>Passo 6: Túnel Escondido</h2>
+        <p>O túnel leva o príncipe diretamente à sala onde a princesa está presa.</p>
+        <button onclick="nextStep('step7')">Resgatar a Princesa</button>
+    </div>
+
+    <div id="step6d" class="step" style="display:none;">
+        <h2>Passo 6: Entrada Oculta</h2>
+        <p>O príncipe usa a entrada oculta para surpreender o guardião da princesa.</p>
+        <button onclick="nextStep('step7')">Derrotar o Guardião</button>
+    </div>
+
+    <div id="step6e" class="step" style="display:none;">
+        <h2>Passo 6: Avançando para a Torre</h2>
+        <p>O príncipe e os guerreiros chegam à torre e enfrentam o guardião juntos.</p>
+    
